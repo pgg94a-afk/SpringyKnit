@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpringyKnit</string>
+    <string name="knitting_report">뜨개리포트</string>
+    <string name="add_project">프로젝트 추가</string>
+    <string name="projects">프로젝트</string>
+    <string name="save">저장</string>
+    <string name="saved">저장됨</string>
+    <string name="saving">저장 중...</string>
+    <string name="pattern">뜨개도안</string>
+    <string name="counter">카운터</string>
+    <string name="select_pdf">PDF 선택</string>
+    <string name="no_pdf_selected">PDF를 선택해주세요</string>
+    <string name="clear_drawing">그림 지우기</string>
+    <string name="delete_project">프로젝트 삭제</string>
+    <string name="delete_confirm">정말 삭제하시겠습니까?</string>
+    <string name="cancel">취소</string>
+    <string name="delete">삭제</string>
+</resources>

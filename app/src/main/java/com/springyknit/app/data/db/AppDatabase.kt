@@ -1,0 +1,37 @@
+package com.springyknit.app.data.db
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.springyknit.app.data.model.Converters
+import com.springyknit.app.data.model.KnittingProject
+
+@Database(
+    entities = [KnittingProject::class],
+    version = 1,
+    exportSchema = false
+)
+@TypeConverters(Converters::class)
+abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun projectDao(): ProjectDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "springyknit_database"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
